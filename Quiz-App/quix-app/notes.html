@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Add your CSS file -->
+</head>
+<body>
+
+    <h1 id="note-title">Notes</h1>
+    <div id="note-content"></div>
+
+    <a href="index.html">Back to Main Page</a>
+
+    <script>
+        // Get the subject from the URL
+        const params = new URLSearchParams(window.location.search);
+        const subject = params.get('subject');
+
+        const noteContent = document.getElementById('note-content');
+
+        // Display notes based on the subject
+        switch(subject) {
+            case 'java':
+                noteContent.innerHTML = '<h2>Java Notes</h2><p>Details about Java...</p>';
+                break;
+            case 'compiler':
+                noteContent.innerHTML = '<h2>Compiler Notes</h2><p>Details about Compiler...</p>';
+                break;
+            case 'spring':
+                noteContent.innerHTML = '<h2>Spring Notes</h2><p>Details about Spring...</p>';
+                break;
+            case 'react':
+                noteContent.innerHTML = '<h2>React Notes</h2><p>Details about React...</p>';
+                break;
+            case 'dev':
+                noteContent.innerHTML = '<h2>Development Notes</h2><p>Details about Development...</p>';
+                break;
+            case 'python':
+                noteContent.innerHTML = '<h2>Python Notes</h2><p>Details about Python...</p>';
+                break;
+            default:
+                noteContent.innerHTML = '<h2>No Notes Available</h2>';
+                break;
+        }
+    </script>
+    <script src="notes.js"></script>
+    
+
+</body>
+</html>
